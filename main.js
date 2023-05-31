@@ -111,10 +111,15 @@ function socialPostStructure () {
     const postImage = document.createElement('div');
     postImage.classList.add('post__image');
 
+    const postFooter = document.createElement('div');
+    postFooter.classList.add('post__footer');
+
+
     // All elements Appended to Post Container
     postContainer.appendChild(postHeader);
     postContainer.appendChild(postText);
     postContainer.appendChild(postImage);
+    postContainer.appendChild(postFooter);
 
     // All elements appendend to Header Container
     postHeader.appendChild(postMeta);
