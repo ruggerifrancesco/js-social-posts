@@ -99,6 +99,10 @@ container.appendChild(postStructure);
 
 // Function Post Structure
 function socialPostStructure () {
+    // Create the main post container
+    const postContainer = document.createElement('div');
+    postContainer.classList.add('post');
 
+    return postContainer;
 }
 
