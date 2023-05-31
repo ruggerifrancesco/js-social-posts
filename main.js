@@ -92,3 +92,12 @@ const posts = [
 //     </div>            
 // </div>
 
+const container = document.getElementById('container');
+socialPostStructure()
+
+
+// Function Post Structure
+function socialPostStructure () {
+
+}
+
