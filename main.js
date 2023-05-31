@@ -105,7 +105,7 @@ function socialPostStructure (post) {
         postImage.classList.add('post__image');
 
         const image = document.createElement('img');
-        image.src = 'https://unsplash.it/600/300?image=171';
+        image.src = `${post.media}`;
         image.alt = '';
 
     // Footer Post Content
