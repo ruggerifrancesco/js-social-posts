@@ -121,8 +121,6 @@ function socialPostStructure (post) {
 
         const likeButton = document.createElement('a');
         likeButton.classList.add('like-button', 'js-like-button');
-        likeButton.href = '#';
-        likeButton.id = 'likeButton';
         likeButton.innerHTML = `
         <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
         <span class="like-button__label">Mi Piace</span>`;
@@ -176,3 +174,26 @@ function socialPostStructure (post) {
     return postContainer;
 }
 
+const likeButtons = document.querySelectorAll('.js-like-button');
+
+likeButtons.forEach(likeBtn => {
+  likeBtn.addEventListener('click', (event) => {
+    const likesCounter = event.currentTarget.parentElement.nextElementSibling.querySelector('.js-likes-counter');
+    const postId = likesCounter.id.split('-')[2];
+    const post = posts.find(post => post.id === parseInt(postId));
+
+    if (post) {
+      let currentLikes = post.likes;
+
+      if (likeBtn.classList.contains('like-button--liked')) {
+        currentLikes--;
+      } else {
+        currentLikes++;
+      }
+
+      likesCounter.textContent = currentLikes;
+      likeBtn.classList.toggle('like-button--liked');
+      post.likes = currentLikes;
+    }
+  });
+});
