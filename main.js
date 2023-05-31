@@ -57,8 +57,7 @@ const posts = [
 ];
 
 
-// <!-- post di esempio/template, da togliere/commentare e generare da JS -->
-//         <div class="post-meta">                    
+// <!-- post di esempio/template, da togliere/commentare e generare da JS -->                  
 //             <div class="post-meta__icon">
 //                 <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione">                    
 //             </div>
@@ -75,7 +74,6 @@ const posts = [
 //     <div class="post__image">
 //         <img src="https://unsplash.it/600/300?image=171" alt="">
 //     </div>
-//     <div class="post__footer">
 //         <div class="likes js-likes">
 //             <div class="likes__cta">
 //                 <a class="like-button  js-like-button" href="#" data-postid="1">
@@ -101,6 +99,7 @@ function socialPostStructure () {
     const postHeader = document.createElement('div');
     postHeader.classList.add('post__header');
 
+    // Header Post Content
     const postMeta = document.createElement('div');
     postMeta.classList.add('post-meta');
 
@@ -112,6 +111,10 @@ function socialPostStructure () {
     // Image Post Content
     const postImage = document.createElement('div');
     postImage.classList.add('post__image');
+
+    const image = document.createElement('img');
+    image.src = 'https://unsplash.it/600/300?image=171';
+    image.alt = '';
 
     // Footer Post Content
     const postFooter = document.createElement('div');
@@ -126,6 +129,9 @@ function socialPostStructure () {
 
     // All elements appendend to Header Container
     postHeader.appendChild(postMeta);
+
+    // All elements appendend to Image Container
+    postImage.appendChild(image);
     
 
     // Return the post itself
