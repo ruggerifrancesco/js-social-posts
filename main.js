@@ -82,7 +82,16 @@ function socialPostStructure (post) {
         const profilePic = document.createElement('img');
         profilePic.classList.add('profile-pic');
         profilePic.src = `${post.author.image}`;
-        profilePic.alt = `${post.author.name}`;    
+        profilePic.alt = `${post.author.name}`;  
+        
+        if (post.author.image === null) {
+            profilePic.classList.add('profile-pic-default');
+            const nameInitials = post.author.name
+            .split(' ')
+            .map(name => name[0])
+            .join('');
+            profilePic.alt = nameInitials;
+          }
 
         const postMetaData = document.createElement('div');
         postMetaData.classList.add('post-meta__data');
@@ -107,6 +116,7 @@ function socialPostStructure (post) {
         const image = document.createElement('img');
         image.src = `${post.media}`;
         image.alt = '';
+        
 
     // Footer Post Content
         const postFooter = document.createElement('div');
