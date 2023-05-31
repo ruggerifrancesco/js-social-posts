@@ -162,6 +162,11 @@ function socialPostStructure () {
         const likesCounter = document.createElement('div');
         likesCounter.classList.add('likes__counter');
 
+        const likesCounterText = document.createElement('b');
+        likesCounterText.id = 'like-counter-1';
+        likesCounterText.classList.add('js-likes-counter');
+        likesCounterText.textContent = '80';
+
 
     // All elements Appended to Post Container
         postContainer.appendChild(postHeader);
@@ -192,6 +197,7 @@ function socialPostStructure () {
 
         // Counter Section Append
         likesSection.appendChild(likesCounter);
+        likesCounter.appendChild(likesCounterText);
 
     // Return the post itself
     return postContainer;
