@@ -122,6 +122,7 @@ function socialPostStructure (post) {
         const likeButton = document.createElement('a');
         likeButton.classList.add('like-button', 'js-like-button');
         likeButton.href = '#';
+        likeButton.id = 'likeButton';
         likeButton.innerHTML = `
         <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
         <span class="like-button__label">Mi Piace</span>`;
