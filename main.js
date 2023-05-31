@@ -98,7 +98,7 @@ function socialPostStructure (post) {
     // Text Post Content
         const postText = document.createElement('div');
         postText.classList.add('post__text');
-        postText.textContent = 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.';
+        postText.textContent = post.content;
 
     // Image Post Content
         const postImage = document.createElement('div');
@@ -139,7 +139,7 @@ function socialPostStructure (post) {
         likesCounter.classList.add('likes__counter');
         likesCounter.innerHTML = `
         Piace a 
-            <b id="like-counter-1" class="js-likes-counter">80</b> 
+            <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> 
         persone`;
 
 
