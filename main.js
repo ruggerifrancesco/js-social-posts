@@ -134,11 +134,10 @@ function socialPostStructure () {
         // Counter Section
         const likesCounter = document.createElement('div');
         likesCounter.classList.add('likes__counter');
-
-        const likesCounterText = document.createElement('b');
-        likesCounterText.id = 'like-counter-1';
-        likesCounterText.classList.add('js-likes-counter');
-        likesCounterText.textContent = '80';
+        likesCounter.innerHTML = `
+        Piace a 
+            <b id="like-counter-1" class="js-likes-counter">80</b> 
+        persone`;
 
 
     // All elements Appended to Post Container
