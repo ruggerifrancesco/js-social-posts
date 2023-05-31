@@ -116,7 +116,7 @@ function socialPostStructure (post) {
 
         const image = document.createElement('img');
         image.src = `${post.media}`;
-        image.alt = '';
+        image.alt = `Post Created: ${post.created}`;
         
 
     // Footer Post Content
