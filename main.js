@@ -65,7 +65,7 @@ posts.forEach(post => {
 
 
 // Function Post Structure
-function socialPostStructure () {
+function socialPostStructure (post) {
     const postContainer = document.createElement('div');
     postContainer.classList.add('post');
 
