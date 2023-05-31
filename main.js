@@ -57,8 +57,11 @@ const posts = [
 ];
 
 const container = document.getElementById('container');
-const postStructure = socialPostStructure();
-container.appendChild(postStructure);
+
+posts.forEach(post => {
+    const postStructure = socialPostStructure(post);
+    container.appendChild(postStructure);
+  });
 
 
 // Function Post Structure
