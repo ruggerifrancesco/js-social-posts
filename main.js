@@ -150,6 +150,14 @@ function socialPostStructure () {
         likeButton.classList.add('like-button', 'js-like-button');
         likeButton.href = '#';
 
+        const likeButtonIcon = document.createElement('i');
+        likeButtonIcon.classList.add('like-button__icon', 'fas', 'fa-thumbs-up');
+        likeButtonIcon.setAttribute('aria-hidden', 'true');
+
+        const likeButtonLabel = document.createElement('span');
+        likeButtonLabel.classList.add('like-button__label');
+        likeButtonLabel.textContent = 'Mi Piace';
+
         // Counter Section
         const likesCounter = document.createElement('div');
         likesCounter.classList.add('likes__counter');
@@ -178,7 +186,9 @@ function socialPostStructure () {
 
         likesSection.appendChild(likesCta);
         likesCta.appendChild(likeButton);
-        
+        likeButton.appendChild(likeButtonIcon);
+        likeButton.appendChild(likeButtonLabel);
+
 
         likesSection.appendChild(likesCounter);
 
