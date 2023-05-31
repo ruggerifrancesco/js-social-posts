@@ -58,7 +58,6 @@ const posts = [
 
 
 // <!-- post di esempio/template, da togliere/commentare e generare da JS -->
-//     <div class="post__header">
 //         <div class="post-meta">                    
 //             <div class="post-meta__icon">
 //                 <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione">                    
@@ -87,8 +86,7 @@ const posts = [
 //             <div class="likes__counter">
 //                 Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
 //             </div>
-//         </div> 
-//     </div>            
+//         </div>          
 
 const container = document.getElementById('container');
 const postStructure = socialPostStructure();
@@ -103,7 +101,19 @@ function socialPostStructure () {
     const postHeader = document.createElement('div');
     postHeader.classList.add('post__header');
 
+    const postMeta = document.createElement('div');
+    postMeta.classList.add('post-meta');
+
+    const postText = document.createElement('div');
+    postText.classList.add('post__text');
+    postText.textContent = 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.';
+
+    // All elements Appended to Post Container
     postContainer.appendChild(postHeader);
+    postContainer.appendChild(postText);
+
+    // All elements appendend to Header Container
+    postHeader.appendChild(postMeta);
 
     // Return the post itself
     return postContainer;
