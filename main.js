@@ -171,6 +171,8 @@ function socialPostStructure () {
 
     // All elements appendend to Footer Container
         postFooter.appendChild(likesSection);
+        likesSection.appendChild(likesCta);
+        likesSection.appendChild(likesCounter);
 
     // Return the post itself
     return postContainer;
