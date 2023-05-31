@@ -170,30 +170,23 @@ function socialPostStructure (post) {
         // Counter Section Append
         likesSection.appendChild(likesCounter);
 
+        const likeCounter = likesCounter.querySelector('.js-likes-counter');
+        let isLiked = false;
+      
+        // Event listener for the like button
+        likeButton.addEventListener('click', () => {
+          if (isLiked) {
+            post.likes--;
+            likeCounter.textContent = post.likes;
+            isLiked = false;
+          } else {
+            post.likes++;
+            likeCounter.textContent = post.likes;
+            isLiked = true;
+          }
+        });
+      
+
     // Return the post itself
     return postContainer;
 }
-
-const likeButtons = document.querySelectorAll('.js-like-button');
-
-likeButtons.forEach(likeBtn => {
-  likeBtn.addEventListener('click', (event) => {
-    const likesCounter = event.currentTarget.parentElement.nextElementSibling.querySelector('.js-likes-counter');
-    const postId = likesCounter.id.split('-')[2];
-    const post = posts.find(post => post.id === parseInt(postId));
-
-    if (post) {
-      let currentLikes = post.likes;
-
-      if (likeBtn.classList.contains('like-button--liked')) {
-        currentLikes--;
-      } else {
-        currentLikes++;
-      }
-
-      likesCounter.textContent = currentLikes;
-      likeBtn.classList.toggle('like-button--liked');
-      post.likes = currentLikes;
-    }
-  });
-});
