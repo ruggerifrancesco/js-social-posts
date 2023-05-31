@@ -96,42 +96,48 @@ function socialPostStructure () {
     const postContainer = document.createElement('div');
     postContainer.classList.add('post');
 
-    const postHeader = document.createElement('div');
-    postHeader.classList.add('post__header');
-
     // Header Post Content
-    const postMeta = document.createElement('div');
-    postMeta.classList.add('post-meta');
+        const postHeader = document.createElement('div');
+        postHeader.classList.add('post__header');
+
+        const postMeta = document.createElement('div');
+        postMeta.classList.add('post-meta');
+
+        const postMetaIcon = document.createElement('div');
+        postMetaIcon.classList.add('post-meta__icon');
+
+        const postMetaData = document.createElement('div');
+        postMetaData.classList.add('post-meta__data');
 
     // Text Post Content
-    const postText = document.createElement('div');
-    postText.classList.add('post__text');
-    postText.textContent = 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.';
+        const postText = document.createElement('div');
+        postText.classList.add('post__text');
+        postText.textContent = 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.';
 
     // Image Post Content
-    const postImage = document.createElement('div');
-    postImage.classList.add('post__image');
+        const postImage = document.createElement('div');
+        postImage.classList.add('post__image');
 
-    const image = document.createElement('img');
-    image.src = 'https://unsplash.it/600/300?image=171';
-    image.alt = '';
+        const image = document.createElement('img');
+        image.src = 'https://unsplash.it/600/300?image=171';
+        image.alt = '';
 
     // Footer Post Content
-    const postFooter = document.createElement('div');
-    postFooter.classList.add('post__footer');
+        const postFooter = document.createElement('div');
+        postFooter.classList.add('post__footer');
 
 
     // All elements Appended to Post Container
-    postContainer.appendChild(postHeader);
-    postContainer.appendChild(postText);
-    postContainer.appendChild(postImage);
-    postContainer.appendChild(postFooter);
+        postContainer.appendChild(postHeader);
+        postContainer.appendChild(postText);
+        postContainer.appendChild(postImage);
+        postContainer.appendChild(postFooter);
 
     // All elements appendend to Header Container
-    postHeader.appendChild(postMeta);
+        postHeader.appendChild(postMeta);
 
     // All elements appendend to Image Container
-    postImage.appendChild(image);
+        postImage.appendChild(image);
     
 
     // Return the post itself
