@@ -176,17 +176,18 @@ function socialPostStructure (post) {
         // Event listener for the like button
         likeButton.addEventListener('click', () => {
           if (isLiked) {
+            likeButton.classList.remove('like-button--liked');
             post.likes--;
             likeCounter.textContent = post.likes;
             isLiked = false;
           } else {
+            likeButton.classList.add('like-button--liked');
             post.likes++;
             likeCounter.textContent = post.likes;
             isLiked = true;
           }
         });
       
-
     // Return the post itself
     return postContainer;
 }
