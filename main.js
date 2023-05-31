@@ -81,15 +81,15 @@ function socialPostStructure (post) {
 
         const profilePic = document.createElement('img');
         profilePic.classList.add('profile-pic');
-        profilePic.src = 'https://unsplash.it/300/300?image=15';
-        profilePic.alt = 'Phil Mangione';    
+        profilePic.src = `${post.author.image}`;
+        profilePic.alt = `${post.author.name}`;    
 
         const postMetaData = document.createElement('div');
         postMetaData.classList.add('post-meta__data');
 
         const postMetaAuthor = document.createElement('div');
         postMetaAuthor.classList.add('post-meta__author');
-        postMetaAuthor.textContent = 'Phil Mangione';
+        postMetaAuthor.textContent = `${post.author.name}`;
 
         const postMetaTime = document.createElement('div');
         postMetaTime.classList.add('post-meta__time');
