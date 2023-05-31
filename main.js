@@ -118,6 +118,10 @@ function socialPostStructure () {
         postMetaAuthor.classList.add('post-meta__author');
         postMetaAuthor.textContent = 'Phil Mangione';
 
+        const postMetaTime = document.createElement('div');
+        postMetaTime.classList.add('post-meta__time');
+        postMetaTime.textContent = '4 mesi fa';
+
     // Text Post Content
         const postText = document.createElement('div');
         postText.classList.add('post__text');
@@ -149,6 +153,7 @@ function socialPostStructure () {
 
         postMeta.appendChild(postMetaData);
         postMetaData.appendChild(postMetaAuthor);
+        postMetaData.appendChild(postMetaTime);
 
     // All elements appendend to Image Container
         postImage.appendChild(image);
