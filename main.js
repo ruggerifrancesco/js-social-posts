@@ -57,6 +57,7 @@ const posts = [
 ];
 
 const container = document.getElementById('container');
+const likedPosts = [];
 
 posts.forEach(post => {
     const postStructure = socialPostStructure(post);
@@ -190,14 +191,26 @@ function socialPostStructure (post) {
             post.likes--;
             likeCounter.textContent = post.likes;
             isLiked = false;
+
+            const index = likedPosts.indexOf(post.id);
+            if (index !== -1) {
+              likedPosts.splice(index, 1); // Remove the post id from likedPosts array
+            }
           } else {
             likeButton.classList.add('like-button--liked');
             post.likes++;
             likeCounter.textContent = post.likes;
             isLiked = true;
+
+            if (!likedPosts.includes(post.id)) {
+                likedPosts.push(post.id); // Add the post id to likedPosts array
+            }
           }
+          console.log('Post Liked:', `id=${likedPosts}`);
         });
+
       
     // Return the post itself
     return postContainer;
 }
+
