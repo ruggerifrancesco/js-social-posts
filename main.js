@@ -106,6 +106,11 @@ function socialPostStructure () {
         const postMetaIcon = document.createElement('div');
         postMetaIcon.classList.add('post-meta__icon');
 
+        const profilePic = document.createElement('img');
+        profilePic.classList.add('profile-pic');
+        profilePic.src = 'https://unsplash.it/300/300?image=15';
+        profilePic.alt = 'Phil Mangione';    
+
         const postMetaData = document.createElement('div');
         postMetaData.classList.add('post-meta__data');
 
@@ -136,6 +141,8 @@ function socialPostStructure () {
     // All elements appendend to Header Container
         postHeader.appendChild(postMeta);
         postMeta.appendChild(postMetaIcon);
+        postMetaIcon.appendChild(profilePic);  
+
         postMeta.appendChild(postMetaData);
 
     // All elements appendend to Image Container
