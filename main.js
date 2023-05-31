@@ -104,13 +104,16 @@ function socialPostStructure () {
     const postMeta = document.createElement('div');
     postMeta.classList.add('post-meta');
 
+    // Text Post Content
     const postText = document.createElement('div');
     postText.classList.add('post__text');
     postText.textContent = 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.';
 
+    // Image Post Content
     const postImage = document.createElement('div');
     postImage.classList.add('post__image');
 
+    // Footer Post Content
     const postFooter = document.createElement('div');
     postFooter.classList.add('post__footer');
 
@@ -123,6 +126,7 @@ function socialPostStructure () {
 
     // All elements appendend to Header Container
     postHeader.appendChild(postMeta);
+    
 
     // Return the post itself
     return postContainer;
