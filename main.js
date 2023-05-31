@@ -58,7 +58,6 @@ const posts = [
 
 
 // <!-- post di esempio/template, da togliere/commentare e generare da JS -->
-// <div class="post">
 //     <div class="post__header">
 //         <div class="post-meta">                    
 //             <div class="post-meta__icon">
@@ -90,7 +89,6 @@ const posts = [
 //             </div>
 //         </div> 
 //     </div>            
-// </div>
 
 const container = document.getElementById('container');
 const postStructure = socialPostStructure();
@@ -99,10 +97,15 @@ container.appendChild(postStructure);
 
 // Function Post Structure
 function socialPostStructure () {
-    // Create the main post container
     const postContainer = document.createElement('div');
     postContainer.classList.add('post');
 
+    const postHeader = document.createElement('div');
+    postHeader.classList.add('post__header');
+
+    postContainer.appendChild(postHeader);
+
+    // Return the post itself
     return postContainer;
 }
 
