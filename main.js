@@ -135,6 +135,8 @@ function socialPostStructure () {
 
     // All elements appendend to Header Container
         postHeader.appendChild(postMeta);
+        postMeta.appendChild(postMetaIcon);
+        postMeta.appendChild(postMetaData);
 
     // All elements appendend to Image Container
         postImage.appendChild(image);
