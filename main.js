@@ -146,6 +146,10 @@ function socialPostStructure () {
         const likesCta = document.createElement('div');
         likesCta.classList.add('likes__cta');
 
+        const likeButton = document.createElement('a');
+        likeButton.classList.add('like-button', 'js-like-button');
+        likeButton.href = '#';
+
         // Counter Section
         const likesCounter = document.createElement('div');
         likesCounter.classList.add('likes__counter');
@@ -171,7 +175,11 @@ function socialPostStructure () {
 
     // All elements appendend to Footer Container
         postFooter.appendChild(likesSection);
+
         likesSection.appendChild(likesCta);
+        likesCta.appendChild(likeButton);
+        
+
         likesSection.appendChild(likesCounter);
 
     // Return the post itself
