@@ -114,6 +114,10 @@ function socialPostStructure () {
         const postMetaData = document.createElement('div');
         postMetaData.classList.add('post-meta__data');
 
+        const postMetaAuthor = document.createElement('div');
+        postMetaAuthor.classList.add('post-meta__author');
+        postMetaAuthor.textContent = 'Phil Mangione';
+
     // Text Post Content
         const postText = document.createElement('div');
         postText.classList.add('post__text');
@@ -144,6 +148,7 @@ function socialPostStructure () {
         postMetaIcon.appendChild(profilePic);  
 
         postMeta.appendChild(postMetaData);
+        postMetaData.appendChild(postMetaAuthor);
 
     // All elements appendend to Image Container
         postImage.appendChild(image);
