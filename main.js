@@ -93,7 +93,8 @@ const posts = [
 // </div>
 
 const container = document.getElementById('container');
-socialPostStructure()
+const postStructure = socialPostStructure();
+container.appendChild(postStructure);
 
 
 // Function Post Structure
