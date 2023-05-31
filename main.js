@@ -119,6 +119,9 @@ function socialPostStructure () {
         const likeButton = document.createElement('a');
         likeButton.classList.add('like-button', 'js-like-button');
         likeButton.href = '#';
+        likeButton.innerHTML = `
+        <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+        <span class="like-button__label">Mi Piace</span>`;
 
         const likeButtonIcon = document.createElement('i');
         likeButtonIcon.classList.add('like-button__icon', 'fas', 'fa-thumbs-up');
@@ -162,12 +165,9 @@ function socialPostStructure () {
         // Cta Section Append
         likesSection.appendChild(likesCta);
         likesCta.appendChild(likeButton);
-        likeButton.appendChild(likeButtonIcon);
-        likeButton.appendChild(likeButtonLabel);
 
         // Counter Section Append
         likesSection.appendChild(likesCounter);
-        likesCounter.appendChild(likesCounterText);
 
     // Return the post itself
     return postContainer;
