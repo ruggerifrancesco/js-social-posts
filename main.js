@@ -185,8 +185,9 @@ function socialPostStructure (post) {
         likesCounter.classList.add('likes__counter');
         likesCounter.innerHTML = `
         Piace a 
-            <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> 
+            <b id="like-counter-${post.id}" class="js-likes-counter">${post.likes}</b> 
         persone`;
+        likeButton.setAttribute('data-postid', `${post.id}`)
 
 
     // All elements Appended to Post Container
