@@ -224,7 +224,7 @@ function socialPostStructure (post) {
       
         // Event listener for the like button
         likeButton.addEventListener('click', (event) => {
-            event.preventDefault();
+            event.preventDefault(); // Prevent the default link behavior
             if (isLiked) {
               likeButton.classList.remove('like-button--liked');
               post.likes--;
