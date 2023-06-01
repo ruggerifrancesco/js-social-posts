@@ -112,6 +112,12 @@ function socialPostStructure (post) {
         // In case nothing to return for neww algortitm timeAgo
         postMetaTime.textContent = newDate;
 
+        // Calculate time difference
+        const createdDate = new Date(post.created);
+        const currentDate = new Date();
+        const timeDiff = currentDate - createdDate;
+
+
     // Text Post Content
         const postText = document.createElement('div');
         postText.classList.add('post__text');
