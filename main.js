@@ -110,7 +110,7 @@ function socialPostStructure (post) {
         const newDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
 
         // In case nothing to return for neww algortitm timeAgo
-        postMetaTime.textContent = newDate;
+        // postMetaTime.textContent = newDate;
 
         // Calculate time difference
         const createdDate = new Date(post.created);
@@ -120,6 +120,27 @@ function socialPostStructure (post) {
         // Calculate months, days, hours, minutes, and seconds
         const { months, days, hours, minutes, seconds } = convertMsToTime(timeDiff);
             
+        // Display time difference
+        const timeUnits = [
+          { value: months, unit: 'mesi' },
+          { value: days, unit: 'giorni' },
+          { value: hours, unit: 'ore' },
+          { value: minutes, unit: 'minuti' },
+          { value: seconds, unit: 'secondi' }
+        ];
+    
+        let timeAgo = '';
+    
+        timeUnits.forEach(({ value, unit }) => {
+            if (value > 0 && timeAgo === '') {
+              timeAgo = `${value} ${unit}`;
+            }
+          });
+          
+          timeAgo += ' fa';
+
+        postMetaTime.textContent = timeAgo;
+
     // Text Post Content
         const postText = document.createElement('div');
         postText.classList.add('post__text');
