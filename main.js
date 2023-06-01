@@ -59,6 +59,7 @@ const posts = [
 const container = document.getElementById('container');
 const likedPosts = [];
 
+
 posts.forEach(post => {
     const postStructure = socialPostStructure(post);
     container.appendChild(postStructure);
@@ -103,7 +104,13 @@ function socialPostStructure (post) {
 
         const postMetaTime = document.createElement('div');
         postMetaTime.classList.add('post-meta__time');
-        postMetaTime.textContent = '4 mesi fa';
+        postMetaTime.textContent = post.created;
+
+        // Convert date format
+        const dateParts = post.created.split('-');
+        const newDate = dateParts[2] + '/' + dateParts[1] + '/' + dateParts[0];
+            
+        postMetaTime.textContent = newDate;
 
     // Text Post Content
         const postText = document.createElement('div');
