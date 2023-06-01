@@ -93,7 +93,7 @@ function socialPostStructure (post) {
             .map(name => name[0])
             .join('');
             profilePic.alt = nameInitials;
-          }
+        }
 
         const postMetaData = document.createElement('div');
         postMetaData.classList.add('post-meta__data');
@@ -245,7 +245,7 @@ function socialPostStructure (post) {
                   likedPosts.push(post.id); // Add the post id to likedPosts array
               }
             }
-            console.log('Post Liked:', `id=${likedPosts}`);
+            console.log(`Post Liked: ${likedPosts}`);
         });
 
       
