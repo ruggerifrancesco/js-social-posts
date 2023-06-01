@@ -104,12 +104,12 @@ function socialPostStructure (post) {
 
         const postMetaTime = document.createElement('div');
         postMetaTime.classList.add('post-meta__time');
-        postMetaTime.textContent = post.created;
 
         // Convert date format
         const dateParts = post.created.split('-');
         const newDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
 
+        // In case nothing to return for neww algortitm timeAgo
         postMetaTime.textContent = newDate;
 
     // Text Post Content
@@ -220,4 +220,21 @@ function socialPostStructure (post) {
     // Return the post itself
     return postContainer;
 }
+
+function convertMsToTime(milliseconds) {
+    let seconds = Math.floor(milliseconds / 1000);
+    let minutes = Math.floor(seconds / 60);
+    let hours = Math.floor(minutes / 60);
+    let days = Math.floor(hours / 24);
+    let months = Math.floor(days / 30);
+  
+    seconds = seconds % 60;
+    minutes = minutes % 60;
+    hours = hours % 24;
+    days = days % 30;
+    months = months % 12;
+  
+    return { months, days, hours, minutes, seconds };
+  }
+  
 
