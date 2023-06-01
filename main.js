@@ -117,7 +117,9 @@ function socialPostStructure (post) {
         const currentDate = new Date();
         const timeDiff = currentDate - createdDate;
 
-
+        // Calculate months, days, hours, minutes, and seconds
+        const { months, days, hours, minutes, seconds } = convertMsToTime(timeDiff);
+            
     // Text Post Content
         const postText = document.createElement('div');
         postText.classList.add('post__text');
