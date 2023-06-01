@@ -108,8 +108,8 @@ function socialPostStructure (post) {
 
         // Convert date format
         const dateParts = post.created.split('-');
-        const newDate = dateParts[2] + '/' + dateParts[1] + '/' + dateParts[0];
-            
+        const newDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+
         postMetaTime.textContent = newDate;
 
     // Text Post Content
