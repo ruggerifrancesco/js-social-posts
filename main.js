@@ -122,10 +122,10 @@ function socialPostStructure (post) {
             
         // Display time difference
         const timeUnits = [
-          { value: months, unit: 'mesi' },
-          { value: days, unit: 'giorni' },
-          { value: hours, unit: 'ore' },
-          { value: minutes, unit: 'minuti' },
+          { value: months, unit: 'mese/i' },
+          { value: days, unit: 'giorno/i' },
+          { value: hours, unit: 'ora/e' },
+          { value: minutes, unit: 'minuto/i' },
           { value: seconds, unit: 'secondi' }
         ];
     
