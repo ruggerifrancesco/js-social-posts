@@ -109,7 +109,7 @@ function socialPostStructure (post) {
         const dateParts = post.created.split('-');
         const newDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
 
-        // In case nothing to return for neww algortitm timeAgo
+        // In case nothing to return for new algortitm timeAgo
         // postMetaTime.textContent = newDate;
 
         // Calculate time difference
