@@ -168,6 +168,7 @@ function socialPostStructure (post) {
 
         const likeButton = document.createElement('a');
         likeButton.classList.add('like-button', 'js-like-button');
+        likeButton.href = '';
         likeButton.innerHTML = `
         <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
         <span class="like-button__label">Mi Piace</span>`;
@@ -222,28 +223,29 @@ function socialPostStructure (post) {
         let isLiked = false;
       
         // Event listener for the like button
-        likeButton.addEventListener('click', () => {
-          if (isLiked) {
-            likeButton.classList.remove('like-button--liked');
-            post.likes--;
-            likeCounter.textContent = post.likes;
-            isLiked = false;
+        likeButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (isLiked) {
+              likeButton.classList.remove('like-button--liked');
+              post.likes--;
+              likeCounter.textContent = post.likes;
+              isLiked = false;
 
-            const index = likedPosts.indexOf(post.id);
-            if (index !== -1) {
-              likedPosts.splice(index, 1); // Remove the post id from likedPosts array
-            }
-          } else {
-            likeButton.classList.add('like-button--liked');
-            post.likes++;
-            likeCounter.textContent = post.likes;
-            isLiked = true;
+              const index = likedPosts.indexOf(post.id);
+              if (index !== -1) {
+                likedPosts.splice(index, 1); // Remove the post id from likedPosts array
+              }
+            } else {
+              likeButton.classList.add('like-button--liked');
+              post.likes++;
+              likeCounter.textContent = post.likes;
+              isLiked = true;
 
-            if (!likedPosts.includes(post.id)) {
-                likedPosts.push(post.id); // Add the post id to likedPosts array
+              if (!likedPosts.includes(post.id)) {
+                  likedPosts.push(post.id); // Add the post id to likedPosts array
+              }
             }
-          }
-          console.log('Post Liked:', `id=${likedPosts}`);
+            console.log('Post Liked:', `id=${likedPosts}`);
         });
 
       
